@@ -5,35 +5,38 @@
 void main()
 {
 	int a,b,times=0,i,j,answer[4],g[4];
-	for (i=0;i<4,i++;)
+	for (i=0;i<4;i++)
 	{
 		srand((unsigned int)time(NULL));
 		answer[i]=rand()%10;
-		   for (j=0,j<i,j++;)
-			   while answer[i]==answer[j];
+		   for (j=0;j<i;j++)
+			   while (answer[i]==answer[j])
 			   {
 				   answer[i]=rand()%10;
 				   j=j-1;
 			   }
-	}
-     for (i=0,i<4,i++;)
-       printf("please input your guess:\n");
-	    while (a<=4)
+	} 
+	printf("please input your guess:\n");
+     for (i=0;i<4;i++)
+       while (a<=4)
 		{
 		 a=0;
 		 b=0;
 		 times++;
-		 printf("NO.%dguess:\n",times);
-	     scanf("%d",&g[i]);
+		 scanf("%d",&g[i]);
+		 getchar();
+		 printf("NO.%dguess\n",times);
 		 for (j=0;j<4;j++)
 			 if(g[i]=answer[j])
 			 {
 				 b++;
-				 if(i=j)
+				 if(i==j)
 				 {
 					 a++;
 					 b--;
 				 }
 			 }
 		}
+
+   printf("result:%dA%dB\n",a,b);
 }
